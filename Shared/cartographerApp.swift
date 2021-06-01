@@ -24,58 +24,58 @@ class UserInfo:ObservableObject{
 @main
 struct cartographerApp: App {
     let persistenceController = PersistenceController.shared;
+    
     @StateObject var userInfo = UserInfo()
-
     @State var userListener:ListenerRegistration?
     @State var isAlreadyLaunchedOnce = false
     
     func appLoad(){
         if(!isAlreadyLaunchedOnce){
             isAlreadyLaunchedOnce = true
-        FirebaseApp.configure()
-        FirebaseAuth.Auth.auth().addStateDidChangeListener{ (auth, user) in
-            if let user = user {
-                self.userInfo.uid = user.uid
-                self.userInfo.email = user.email
-                self.userInfo.name = user.displayName
-                self.userInfo.signedIn = true
-                
-                NotificationCenter.default.post(name:Notification.Name("userLoggedIn"),object: nil)
-         
-
-                userListener = Firestore.firestore().collection("users").document(user.uid).addSnapshotListener{ documentSnapshot, error in
-                    guard let document = documentSnapshot else {
-                        print("Error fetching document: \(error!)")
-                        return
+            FirebaseApp.configure()
+            FirebaseAuth.Auth.auth().addStateDidChangeListener{ (auth, user) in
+                if let user = user {
+                    self.userInfo.uid = user.uid
+                    self.userInfo.email = user.email
+                    self.userInfo.name = user.displayName
+                    self.userInfo.signedIn = true
+                    
+                    NotificationCenter.default.post(name:Notification.Name("userLoggedIn"),object: nil)
+             
+                    //get the user document
+                    userListener = Firestore.firestore().collection("users").document(user.uid).addSnapshotListener{ documentSnapshot, error in
+                        guard let document = documentSnapshot else {
+                            print("Error fetching document: \(error!)")
+                            return
+                        }
+                        guard let data = document.data() else {
+                            print("Document data was empty.")
+                            return
+                        }
+                        if(data["favoriteLists"] != nil){
+                            userInfo.favoriteLists = data["favoriteLists"] as? [String]
+                        }
+                        if(data["favoriteFolders"] != nil){
+                            userInfo.favoriteFolders = data["favoriteFolders"] as? [String]
+                        }
+                        if(data["displayName"] != nil){
+                            userInfo.name = data["displayName"] as? String
+                        }
+                        NotificationCenter.default.post(name:Notification.Name("userDocChanged"),object: nil)
                     }
-                    guard let data = document.data() else {
-                        print("Document data was empty.")
-                        return
-                    }
-                    if(data["favoriteLists"] != nil){
-                        userInfo.favoriteLists = data["favoriteLists"] as? [String]
-                    }
-                    if(data["favoriteFolders"] != nil){
-                        userInfo.favoriteFolders = data["favoriteFolders"] as? [String]
-                    }
-                    if(data["displayName"] != nil){
-                        userInfo.name = data["displayName"] as? String
-                    }
+                    
+                }else{
+                    userInfo.signedIn = false
+                    userInfo.signedIn = false
+                    userInfo.email = nil
+                    userInfo.name = nil
+                    userInfo.uid = nil
+                    userInfo.favoriteLists = nil
+                    userInfo.favoriteFolders = nil
                     NotificationCenter.default.post(name:Notification.Name("userDocChanged"),object: nil)
-                }
-                
-            }else{
-                self.userInfo.signedIn = false
-                userInfo.signedIn = false
-                userInfo.email = nil
-                userInfo.name = nil
-                userInfo.uid = nil
-                userInfo.favoriteLists = nil
-                userInfo.favoriteFolders = nil
-                NotificationCenter.default.post(name:Notification.Name("userDocChanged"),object: nil)
 
+                }
             }
-        }
         }
     }
     
@@ -86,7 +86,7 @@ struct cartographerApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(userInfo)
                 .onOpenURL(perform: { url in
-                    print("hello")
+                    //website sends a url with a id-token, and then the app calls a cloud function which returns a sign-in token, which is used to sign in
                     if(url.absoluteString.starts(with: "cartographer://idtoken/")){
                         FirebaseFunctions.Functions.functions().httpsCallable("signInWithToken").call(["token":url.lastPathComponent]){(result, error) in
                             if let error = error as NSError? {
@@ -100,7 +100,6 @@ struct cartographerApp: App {
                     }
                 })
                 .onAppear(perform:appLoad)
-
         }
     }
 }

@@ -36,7 +36,35 @@ struct ContentView: View {
     @State var showingAddSheet = false
     @State var addSheetIsList = true
     @State var addText:String = "New List"
-
+    
+    func addListOrFolder(){
+        if(!userInfo.signedIn){
+            showingSheet = true;
+        }
+        showingAddSheet = false
+        if(addSheetIsList){
+            if(userInfo.uid != nil && addText.trimmingCharacters(in: .whitespacesAndNewlines) != ""){
+                Firestore.firestore().collection("lists").addDocument(data: [
+                    "name":addText.trimmingCharacters(in: .whitespacesAndNewlines),
+                    "public":false,
+                    "roles":[
+                        userInfo.uid:"creator"
+                    ],
+                    "cards":[]
+                ])
+            }
+        }else{
+            if(userInfo.uid != nil && addText.trimmingCharacters(in: .whitespacesAndNewlines) != ""){
+                Firestore.firestore().collection("folders").addDocument(data: [
+                    "name":addText.trimmingCharacters(in: .whitespacesAndNewlines),
+                    "public":false,
+                    "roles":[
+                        userInfo.uid:"creator"
+                    ]
+                ])
+            }
+        }
+    }
 
     //the list view
     @ViewBuilder func listView() -> some View {
@@ -107,65 +135,17 @@ struct ContentView: View {
                     .foregroundColor(Color.primary)
                 HStack{
                     Button(action:{
-                        if(!userInfo.signedIn){
-                            showingSheet = true;
-                        }
-                        showingAddSheet = false
-                        if(addSheetIsList){
-                            if(userInfo.uid != nil && addText.trimmingCharacters(in: .whitespacesAndNewlines) != ""){
-                                Firestore.firestore().collection("lists").addDocument(data: [
-                                    "name":addText.trimmingCharacters(in: .whitespacesAndNewlines),
-                                    "public":false,
-                                    "roles":[
-                                        userInfo.uid:"creator"
-                                    ],
-                                    "cards":[]
-                                ])
-                            }
-                        }else{
-                            if(userInfo.uid != nil && addText.trimmingCharacters(in: .whitespacesAndNewlines) != ""){
-                                Firestore.firestore().collection("folders").addDocument(data: [
-                                    "name":addText.trimmingCharacters(in: .whitespacesAndNewlines),
-                                    "public":false,
-                                    "roles":[
-                                        userInfo.uid:"creator"
-                                    ]
-                                ])
-                            }
-                        }
+                        addListOrFolder()
                     },label:{
                         Image(systemName:"checkmark")
                     })
                     .frame(maxWidth:.infinity,maxHeight:.infinity)
                     .buttonStyle(PlainButtonStyle())
-                    .padding(5)
                     .background(Color.green)
                     .foregroundColor(customColors.backgroundPrimary)
                     .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
                     .onTapGesture {
-                        showingAddSheet = false
-                        if(addSheetIsList){
-                            if(userInfo.uid != nil && addText.trimmingCharacters(in: .whitespacesAndNewlines) != ""){
-                                Firestore.firestore().collection("lists").addDocument(data: [
-                                    "name":addText.trimmingCharacters(in: .whitespacesAndNewlines),
-                                    "public":false,
-                                    "roles":[
-                                        userInfo.uid:"creator"
-                                    ],
-                                    "cards":[]
-                                ])
-                            }
-                        }else{
-                            if(userInfo.uid != nil && addText.trimmingCharacters(in: .whitespacesAndNewlines) != ""){
-                                Firestore.firestore().collection("folders").addDocument(data: [
-                                    "name":addText.trimmingCharacters(in: .whitespacesAndNewlines),
-                                    "public":false,
-                                    "roles":[
-                                        userInfo.uid:"creator"
-                                    ]
-                                ])
-                            }
-                        }
+                        addListOrFolder()
                     }
                     
                     Button(action:{
@@ -175,7 +155,6 @@ struct ContentView: View {
                     })
                     .frame(maxWidth:.infinity,maxHeight:.infinity)
                     .buttonStyle(PlainButtonStyle())
-                    .padding(5)
                     .background(Color.red)
                     .foregroundColor(customColors.backgroundPrimary)
                     .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))

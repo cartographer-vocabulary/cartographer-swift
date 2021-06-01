@@ -37,6 +37,12 @@
 		1B8DBF7B262C5EB50051F8EC /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8DBF79262C5EB50051F8EC /* FlashcardView.swift */; };
 		1BB77DE1264F0881009C730A /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB77DE0264F0881009C730A /* colors.swift */; };
 		1BB77DE2264F0881009C730A /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB77DE0264F0881009C730A /* colors.swift */; };
+		1BFD29BD2666C44E00A7078E /* FolderSettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD29BC2666C44E00A7078E /* FolderSettingsSheet.swift */; };
+		1BFD29BE2666C44E00A7078E /* FolderSettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD29BC2666C44E00A7078E /* FolderSettingsSheet.swift */; };
+		1BFD29C12666C4BC00A7078E /* ListQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD29C02666C4BC00A7078E /* ListQuizView.swift */; };
+		1BFD29C22666C4BC00A7078E /* ListQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD29C02666C4BC00A7078E /* ListQuizView.swift */; };
+		1BFD29C42666C4DD00A7078E /* ListSettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD29C32666C4DD00A7078E /* ListSettingsSheet.swift */; };
+		1BFD29C52666C4DD00A7078E /* ListSettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD29C32666C4DD00A7078E /* ListSettingsSheet.swift */; };
 		29DA2B0D1C34C89B43E40DAB /* Pods_cartographer__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CAD72F7334F8E78823C56D /* Pods_cartographer__iOS_.framework */; };
 		38AF95C22BC8D042355F0349 /* Pods_cartographer__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CF15E6CAAFF9796AA46F54 /* Pods_cartographer__macOS_.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +104,9 @@
 		1BB77DE0264F0881009C730A /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		1BC1A5752655966100F617F0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1BC1A5772655966100F617F0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		1BFD29BC2666C44E00A7078E /* FolderSettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSettingsSheet.swift; sourceTree = "<group>"; };
+		1BFD29C02666C4BC00A7078E /* ListQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListQuizView.swift; sourceTree = "<group>"; };
+		1BFD29C32666C4DD00A7078E /* ListSettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettingsSheet.swift; sourceTree = "<group>"; };
 		23CAD72F7334F8E78823C56D /* Pods_cartographer__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cartographer__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3A7389E31386DE750AD238 /* Pods-cartographer (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartographer (iOS).release.xcconfig"; path = "Target Support Files/Pods-cartographer (iOS)/Pods-cartographer (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		57CF15E6CAAFF9796AA46F54 /* Pods_cartographer__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cartographer__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,7 +153,7 @@
 				1B26449C262B14EF0031AB46 /* ContentView.swift */,
 				1B2644C8262B22B70031AB46 /* FavoritesContentView.swift */,
 				1B53E9B1262DA2C100A55332 /* SignInSheet.swift */,
-				1B5B899626306F2F0019B523 /* FolderContentView.swift */,
+				1BFD29BF2666C46900A7078E /* Folder Views */,
 				1BB77DE0264F0881009C730A /* colors.swift */,
 				1B533E662630ADDB00A00A89 /* FolderOrListItem.swift */,
 				1B8DBF78262C5E930051F8EC /* List Views */,
@@ -186,11 +195,22 @@
 			isa = PBXGroup;
 			children = (
 				1B2644C3262B17620031AB46 /* ListContentView.swift */,
+				1BFD29C32666C4DD00A7078E /* ListSettingsSheet.swift */,
+				1BFD29C02666C4BC00A7078E /* ListQuizView.swift */,
 				1B12F3F1263DF606000499E1 /* RoleView.swift */,
 				1B2F48732631EEA700D70226 /* CardView.swift */,
 				1B8DBF79262C5EB50051F8EC /* FlashcardView.swift */,
 			);
 			path = "List Views";
+			sourceTree = "<group>";
+		};
+		1BFD29BF2666C46900A7078E /* Folder Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B5B899626306F2F0019B523 /* FolderContentView.swift */,
+				1BFD29BC2666C44E00A7078E /* FolderSettingsSheet.swift */,
+			);
+			path = "Folder Views";
 			sourceTree = "<group>";
 		};
 		221CA92E2DC5F5E5D3D5C10C /* Pods */ = {
@@ -410,8 +430,11 @@
 				1BB77DE1264F0881009C730A /* colors.swift in Sources */,
 				1B2644B3262B14F10031AB46 /* ContentView.swift in Sources */,
 				1B2644C9262B22B70031AB46 /* FavoritesContentView.swift in Sources */,
+				1BFD29C42666C4DD00A7078E /* ListSettingsSheet.swift in Sources */,
 				1B53E9B2262DA2C100A55332 /* SignInSheet.swift in Sources */,
 				1B8DBF7A262C5EB50051F8EC /* FlashcardView.swift in Sources */,
+				1BFD29BD2666C44E00A7078E /* FolderSettingsSheet.swift in Sources */,
+				1BFD29C12666C4BC00A7078E /* ListQuizView.swift in Sources */,
 				1B2644C4262B17620031AB46 /* ListContentView.swift in Sources */,
 				1B2F48742631EEA700D70226 /* CardView.swift in Sources */,
 				1B533E672630ADDB00A00A89 /* FolderOrListItem.swift in Sources */,
@@ -430,8 +453,11 @@
 				1BB77DE2264F0881009C730A /* colors.swift in Sources */,
 				1B2644B4262B14F10031AB46 /* ContentView.swift in Sources */,
 				1B2644CA262B22B70031AB46 /* FavoritesContentView.swift in Sources */,
+				1BFD29C52666C4DD00A7078E /* ListSettingsSheet.swift in Sources */,
 				1B53E9B3262DA2C100A55332 /* SignInSheet.swift in Sources */,
 				1B8DBF7B262C5EB50051F8EC /* FlashcardView.swift in Sources */,
+				1BFD29BE2666C44E00A7078E /* FolderSettingsSheet.swift in Sources */,
+				1BFD29C22666C4BC00A7078E /* ListQuizView.swift in Sources */,
 				1B2644C5262B17620031AB46 /* ListContentView.swift in Sources */,
 				1B2F48752631EEA700D70226 /* CardView.swift in Sources */,
 				1B533E682630ADDB00A00A89 /* FolderOrListItem.swift in Sources */,
