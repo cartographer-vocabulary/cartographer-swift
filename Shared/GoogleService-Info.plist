@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>908220986532-t8ln7kl87n8d0mc097jc6hhqkg9i7aoo.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.908220986532-t8ln7kl87n8d0mc097jc6hhqkg9i7aoo</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB2EvQztVeGjvkyczpbjA7K0sl9uEZWGaQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>908220986532</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>net.tonyzhang.cartographer</string>
+	<key>PROJECT_ID</key>
+	<string>cartographer-vocabulary</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cartographer-vocabulary.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:908220986532:ios:4508575c79b12409c6a231</string>
+</dict>
+</plist>

@@ -1,0 +1,6 @@
+framework module FBLPromises {
+  umbrella header "PromisesObjC-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
