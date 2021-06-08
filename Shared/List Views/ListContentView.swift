@@ -50,8 +50,10 @@ struct DragRelocateDelegate: DropDelegate {
             let from = listData.firstIndex(of: current!)!
             let to = listData.firstIndex(of: item)!
             if listData[to]["index"] != current!["index"] {
+                withAnimation(Animation.easeInOut(duration: 0.2)){
                 listData.move(fromOffsets: IndexSet(integer: from),
                               toOffset: to > from ? to + 1 : to)
+                }
             }
         }
     }
@@ -184,6 +186,7 @@ struct ListContentView: View {
                                                     return ["word":cardItem["word"] ?? "Untitled","definition":cardItem["definition"] ?? "Untitled"]
                                                 })
                                             ])
+
                                         }
                                     }, onDefinitionChange:{ definition in
                                         if(index != nil){
@@ -215,8 +218,7 @@ struct ListContentView: View {
                                 
                             }
                         }
-                            .animation(Animation.easeInOut(duration: 0.2))
-                            .padding()
+                        .padding()
                         
                         //adding lists view
                         if(userRole != 0){

@@ -124,113 +124,112 @@ struct FolderContentView: View {
         .frame(idealWidth:200)
     }
     
+    @ViewBuilder
     var body: some View {
         #if os(macOS)
-        VStack{
-            if(listId == nil){
-                ScrollView{
-                    LazyVGrid(columns:gridItems,spacing:0){
-                        ForEach(folderLists,id:\.self.id){ list in
-                            FolderOrListItem(name:list.name,cardCount: list.cardCount)
-                                .onTapGesture {
-                                    listId = list.id
-                                }
-                        }
-                    }
-                    .padding(.top).padding(.leading).padding(.trailing)
-                    Button(action:{
-                        showingAddSheet = true
-                    }){
-                        Label("Add list",systemImage:"plus")
-                    }
-                    .padding(.leading).padding(.trailing).padding(.bottom)
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                .background(customColors.backgroundPrimary)
-                .navigationTitle(folderDoc.name ?? tempName)
-                .toolbar{
-                    ToolbarItemGroup(placement:.primaryAction){
-                        Button(action: {
-                            Firestore.firestore().collection("users").document(userInfo.uid ?? "").updateData([
-                                "favoriteFolders": (userInfo.favoriteFolders?.contains(folderId) ?? false) ? (userInfo.favoriteFolders?.filter{$0 != folderId}) ?? [] : ((userInfo.favoriteFolders ?? []) + [folderId])
-                            ])
-                        },label:{
-                            Label("Star",systemImage: userInfo.favoriteFolders?.contains(folderId) ?? false ? "star.fill" : "star")
-                                .foregroundColor(userInfo.favoriteFolders?.contains(folderId) ?? false ? Color.accentColor : Color.primary)
-                        })
-                        Button(action: {showingSettingsSheet = true},label:{
-                            Label("Folder Settings",systemImage:"ellipsis")
-                        })
-                    }
-                }
-                .onAppear(perform: {
-                    let db = Firestore.firestore()
-                    folderListener = db.collection("folders").document(folderId).addSnapshotListener { documentSnapshot, error in
-                        guard let document = documentSnapshot else {
-                            print("Error fetching document: \(error!)")
-                            folderDoc = FolderDoc()
-                            return
-                        }
-                        guard let data = document.data() else {
-                            print("Document data was empty.")
-                            folderDoc = FolderDoc()
-                            return
-                        }
-                        if(data["name"] != nil){
-                            folderDoc.name = data["name"] as? String
-                        }else{
-                            folderDoc.name = "untitled"
-                        }
-                        if(data["roles"] != nil){
-                            folderDoc.roles = data["roles"] as? [String:String] ?? [:]
-                        }else{
-                            folderDoc.roles = [:]
-                        }
-                        if((data["roles"] as? [String:String] ?? [:])[userInfo.uid ?? ""] != nil){
-                            folderRole = convertRoleToInt(role:(data["roles"] as? [String:String] ?? [:])[userInfo.uid ?? ""] ?? "")
-                        }else{
-                            folderRole = 0
-                        }
-                    }
-                    folderListsListener = db.collection("lists").whereField("folder", isEqualTo: folderId).addSnapshotListener { querySnapshot, error in
-                        if let error = error {
-                            print("Error getting documents: \(error)")
-                            folderLists = []
-                        } else {
-                            folderLists = []
-                            for document in querySnapshot!.documents {
-                                let folderList = FolderListDoc(name: document.data()["name"] as? String ?? "Untitled", cardCount: (document.data()["cards"] as? [[String:String]])?.count ?? 0, id: document.documentID)
-                                folderLists.append(folderList)
+        if(listId == nil){
+            ScrollView{
+                LazyVGrid(columns:gridItems,spacing:0){
+                    ForEach(folderLists,id:\.self.id){ list in
+                        FolderOrListItem(name:list.name,cardCount: list.cardCount)
+                            .onTapGesture {
+                                listId = list.id
                             }
-                            folderLists.sort { a, b in
-                                return a.name < b.name
-                            }
-                        }
                     }
-                })
-                .onDisappear {
-                    folderListener?.remove()
-                    folderListsListener?.remove()
                 }
-                .sheet(isPresented: $showingAddSheet) {
-                    addFolderListSheet()
+                .padding(.top).padding(.leading).padding(.trailing)
+                Button(action:{
+                    showingAddSheet = true
+                }){
+                    Label("Add list",systemImage:"plus")
                 }
-                .sheet(isPresented: $showingSettingsSheet){
-                    FolderSettingsSheet(folderId:folderId, folderDoc:$folderDoc, folderLists:folderLists, role:folderRole, showingSheet:$showingSettingsSheet)
-                        .environmentObject(userInfo)
-                }
-            }else{
-                ListContentView(listId: listId ?? "", tempName: folderLists.filter{$0.id == listId}.first?.name ?? "Undefined")
-                    .toolbar{
-                        ToolbarItem(placement:.navigation){
-                            Button(action:{
-                                listId = nil
-                            }){
-                                Label("back to folder", systemImage:"chevron.backward")
-                            }
-                        }
-                    }
+                .padding(.leading).padding(.trailing).padding(.bottom)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            .background(customColors.backgroundPrimary)
+            .navigationTitle(folderDoc.name ?? tempName)
+            .toolbar{
+                ToolbarItemGroup(placement:.primaryAction){
+                    Button(action: {
+                        Firestore.firestore().collection("users").document(userInfo.uid ?? "").updateData([
+                            "favoriteFolders": (userInfo.favoriteFolders?.contains(folderId) ?? false) ? (userInfo.favoriteFolders?.filter{$0 != folderId}) ?? [] : ((userInfo.favoriteFolders ?? []) + [folderId])
+                        ])
+                    },label:{
+                        Label("Star",systemImage: userInfo.favoriteFolders?.contains(folderId) ?? false ? "star.fill" : "star")
+                            .foregroundColor(userInfo.favoriteFolders?.contains(folderId) ?? false ? Color.accentColor : Color.primary)
+                    })
+                    Button(action: {showingSettingsSheet = true},label:{
+                        Label("Folder Settings",systemImage:"ellipsis")
+                    })
+                }
+            }
+            .onAppear(perform: {
+                let db = Firestore.firestore()
+                folderListener = db.collection("folders").document(folderId).addSnapshotListener { documentSnapshot, error in
+                    guard let document = documentSnapshot else {
+                        print("Error fetching document: \(error!)")
+                        folderDoc = FolderDoc()
+                        return
+                    }
+                    guard let data = document.data() else {
+                        print("Document data was empty.")
+                        folderDoc = FolderDoc()
+                        return
+                    }
+                    if(data["name"] != nil){
+                        folderDoc.name = data["name"] as? String
+                    }else{
+                        folderDoc.name = "untitled"
+                    }
+                    if(data["roles"] != nil){
+                        folderDoc.roles = data["roles"] as? [String:String] ?? [:]
+                    }else{
+                        folderDoc.roles = [:]
+                    }
+                    if((data["roles"] as? [String:String] ?? [:])[userInfo.uid ?? ""] != nil){
+                        folderRole = convertRoleToInt(role:(data["roles"] as? [String:String] ?? [:])[userInfo.uid ?? ""] ?? "")
+                    }else{
+                        folderRole = 0
+                    }
+                }
+                folderListsListener = db.collection("lists").whereField("folder", isEqualTo: folderId).addSnapshotListener { querySnapshot, error in
+                    if let error = error {
+                        print("Error getting documents: \(error)")
+                        folderLists = []
+                    } else {
+                        folderLists = []
+                        for document in querySnapshot!.documents {
+                            let folderList = FolderListDoc(name: document.data()["name"] as? String ?? "Untitled", cardCount: (document.data()["cards"] as? [[String:String]])?.count ?? 0, id: document.documentID)
+                            folderLists.append(folderList)
+                        }
+                        folderLists.sort { a, b in
+                            return a.name < b.name
+                        }
+                    }
+                }
+            })
+            .onDisappear {
+                folderListener?.remove()
+                folderListsListener?.remove()
+            }
+            .sheet(isPresented: $showingAddSheet) {
+                addFolderListSheet()
+            }
+            .sheet(isPresented: $showingSettingsSheet){
+                FolderSettingsSheet(folderId:folderId, folderDoc:$folderDoc, folderLists:folderLists, role:folderRole, showingSheet:$showingSettingsSheet)
+                    .environmentObject(userInfo)
+            }
+        }else{
+            ListContentView(listId: listId ?? "", tempName: folderLists.filter{$0.id == listId}.first?.name ?? "Undefined")
+                .toolbar{
+                    ToolbarItem(placement:.navigation){
+                        Button(action:{
+                            listId = nil
+                        }){
+                            Label("back to folder", systemImage:"chevron.backward")
+                        }
+                    }
+                }
         }
         #else
         ScrollView{

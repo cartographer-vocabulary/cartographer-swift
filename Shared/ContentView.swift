@@ -38,9 +38,6 @@ struct ContentView: View {
     @State var addText:String = "New List"
     
     func addListOrFolder(){
-        if(!userInfo.signedIn){
-            showingSheet = true;
-        }
         showingAddSheet = false
         if(addSheetIsList){
             if(userInfo.uid != nil && addText.trimmingCharacters(in: .whitespacesAndNewlines) != ""){
@@ -77,9 +74,13 @@ struct ContentView: View {
             Section(header:HStack{
                 Text("My Lists")
                 Button(action:{
-                    addSheetIsList = true
-                    showingAddSheet = true
-                    addText = "New List"
+                    if(!userInfo.signedIn){
+                        showingSheet = true;
+                    }else{
+                        addSheetIsList = true
+                        showingAddSheet = true
+                        addText = "New List"
+                    }
                 }){
                     Image(systemName: "plus")
                         .padding(.bottom,1)
@@ -99,9 +100,13 @@ struct ContentView: View {
             Section(header:HStack{
                 Text("My Folders")
                 Button(action:{
-                    addSheetIsList = false
-                    showingAddSheet = true
-                    addText = "New Folder"
+                    if(!userInfo.signedIn){
+                        showingSheet = true;
+                    }else{
+                        addSheetIsList = true
+                        showingAddSheet = true
+                        addText = "New List"
+                    }
                 }){
                     Image(systemName: "plus")
                         .padding(.bottom,1)
@@ -167,7 +172,6 @@ struct ContentView: View {
             }
             .padding()
             .frame(minWidth:200)
-            
         }
        
     }
@@ -245,17 +249,8 @@ struct ContentView: View {
                     }
                 })
             #endif
-            
-            VStack(alignment: .leading){
-                Text("Cartographer")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Text("Hello \(userInfo.name ?? "Person")! click on some stuff on the side bar to use this app")
-            }
-            .frame(maxWidth:.infinity,maxHeight: .infinity)
-            .padding()
-            .ignoresSafeArea()
-            .background(customColors.backgroundPrimary)
+            FavoritesContentView().environmentObject(userInfo).environmentObject(userInfo)
+           
             
             
         }

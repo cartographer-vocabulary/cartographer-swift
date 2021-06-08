@@ -83,83 +83,83 @@ struct FavoritesContentView: View {
         }
     }
     
+    
+    @ViewBuilder
     var body: some View {
         #if os(macOS)
-        VStack(alignment:.leading){
-            if(listId != nil){
-                ListContentView(listId: listId ?? "", tempName: favoriteLists.filter{$0.id == listId}.first?.name ?? "Undefined")
-                    .frame(maxWidth:.infinity,maxHeight: .infinity)
-                    .toolbar{
-                        ToolbarItem(placement:.navigation){
-                            Button(action:{
-                                listId = nil
-                            }){
-                                Label("back to favorites", systemImage:"chevron.backward")
-                            }
+        if(listId != nil){
+            ListContentView(listId: listId ?? "", tempName: favoriteLists.filter{$0.id == listId}.first?.name ?? "Undefined")
+                .frame(maxWidth:.infinity,maxHeight: .infinity)
+                .toolbar{
+                    ToolbarItem(placement:.navigation){
+                        Button(action:{
+                            listId = nil
+                        }){
+                            Label("back to favorites", systemImage:"chevron.backward")
                         }
                     }
-            }else if(folderId != nil){
-                FolderContentView(folderId: folderId ?? "", tempName: favoriteFolders.filter{$0.id == folderId}.first?.name ?? "Undefined")
-                    .toolbar{
-                        ToolbarItem(placement:.navigation){
-                            Button(action:{
-                                folderId = nil
-                            }){
-                                Label("back to favorites", systemImage:"chevron.backward")
-                            }
+                }
+        }else if(folderId != nil){
+            FolderContentView(folderId: folderId ?? "", tempName: favoriteFolders.filter{$0.id == folderId}.first?.name ?? "Undefined")
+                .toolbar{
+                    ToolbarItem(placement:.navigation){
+                        Button(action:{
+                            folderId = nil
+                        }){
+                            Label("back to favorites", systemImage:"chevron.backward")
                         }
                     }
-            }else{
-                ScrollView{
-                    VStack(alignment:.leading){
-                        Text("LISTS")
-                            .foregroundColor(Color.gray)
-                            .padding(.leading,23)
-                            .padding(.top)
-                        VStack{
-                            LazyVGrid(columns:gridItems,spacing:0){
-                                ForEach(favoriteLists,id:\.self.id){ list in
-                                    FolderOrListItem(name:list.name,cardCount: list.cardCount)
-                                        .onTapGesture {
-                                            listId = list.id
-                                        }
-                                }
+                }
+        }else{
+            ScrollView{
+                VStack(alignment:.leading){
+                    Text("LISTS")
+                        .foregroundColor(Color.gray)
+                        .padding(.leading,23)
+                        .padding(.top)
+                    VStack{
+                        LazyVGrid(columns:gridItems,spacing:0){
+                            ForEach(favoriteLists,id:\.self.id){ list in
+                                FolderOrListItem(name:list.name,cardCount: list.cardCount)
+                                    .onTapGesture {
+                                        listId = list.id
+                                    }
                             }
-                            .padding(.top,0)
-                            .padding(.leading)
-                            .padding(.trailing)
-                            .padding(.bottom)
                         }
-                        
-                        Text("FOLDERS")
-                            .foregroundColor(Color.gray)
-                            .padding(.leading,23)
-                        VStack{
-                            LazyVGrid(columns:gridItems,spacing:0){
-                                ForEach(favoriteFolders,id:\.self.id){ folder in
-                                    FolderOrListItem(name:folder.name)
-                                        .onTapGesture {
-                                            folderId = folder.id
-                                        }
-                                }
-                            }
-                            .padding(.top,0)
-                            .padding(.leading)
-                            .padding(.trailing)
-                            .padding(.bottom)
-                        }
+                        .padding(.top,0)
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .padding(.bottom)
+                    }
                     
+                    Text("FOLDERS")
+                        .foregroundColor(Color.gray)
+                        .padding(.leading,23)
+                    VStack{
+                        LazyVGrid(columns:gridItems,spacing:0){
+                            ForEach(favoriteFolders,id:\.self.id){ folder in
+                                FolderOrListItem(name:folder.name)
+                                    .onTapGesture {
+                                        folderId = folder.id
+                                    }
+                            }
+                        }
+                        .padding(.top,0)
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .padding(.bottom)
                     }
                 
                 }
-                .frame(maxWidth:.infinity, maxHeight: .infinity)
-                .background(customColors.backgroundPrimary)
-                .navigationTitle("Favorites")
-                .onAppear(perform: updateFavorites)
-                .onReceive(userDocChanged, perform:{ _ in
-                    updateFavorites()
-                })
+            
             }
+            .frame(maxWidth:.infinity, maxHeight: .infinity)
+            .background(customColors.backgroundPrimary)
+            .navigationTitle("Favorites")
+            .onAppear(perform: updateFavorites)
+            .onReceive(userDocChanged, perform:{ _ in
+                updateFavorites()
+            })
         }
         #else
         ScrollView{
