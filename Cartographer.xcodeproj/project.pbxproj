@@ -35,6 +35,20 @@
 		1B5B899826306F2F0019B523 /* FolderContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5B899626306F2F0019B523 /* FolderContentView.swift */; };
 		1B8DBF7A262C5EB50051F8EC /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8DBF79262C5EB50051F8EC /* FlashcardView.swift */; };
 		1B8DBF7B262C5EB50051F8EC /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8DBF79262C5EB50051F8EC /* FlashcardView.swift */; };
+		1BA83AA926781B3A00C9516A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC1A5752655966100F617F0 /* WidgetKit.framework */; };
+		1BA83AAA26781B3A00C9516A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC1A5772655966100F617F0 /* SwiftUI.framework */; };
+		1BA83AAD26781B3A00C9516A /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA83AAC26781B3A00C9516A /* widget.swift */; };
+		1BA83AB026781B3C00C9516A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BA83AAF26781B3C00C9516A /* Assets.xcassets */; };
+		1BA83AB226781B3C00C9516A /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1BA83AAE26781B3A00C9516A /* widget.intentdefinition */; };
+		1BA83AB326781B3C00C9516A /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1BA83AAE26781B3A00C9516A /* widget.intentdefinition */; };
+		1BA83AB626781B3C00C9516A /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1BA83AA826781B3A00C9516A /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1BA83ABF26781B4A00C9516A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC1A5752655966100F617F0 /* WidgetKit.framework */; };
+		1BA83AC026781B4A00C9516A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC1A5772655966100F617F0 /* SwiftUI.framework */; };
+		1BA83ACD26781B4B00C9516A /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1BA83ABE26781B4A00C9516A /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1BA83AD126781B7300C9516A /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA83AAC26781B3A00C9516A /* widget.swift */; };
+		1BA83AD426781B7900C9516A /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1BA83AAE26781B3A00C9516A /* widget.intentdefinition */; };
+		1BA83AD526781B7900C9516A /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1BA83AAE26781B3A00C9516A /* widget.intentdefinition */; };
+		1BA83AD626781B7C00C9516A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BA83AAF26781B3C00C9516A /* Assets.xcassets */; };
 		1BB77DE1264F0881009C730A /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB77DE0264F0881009C730A /* colors.swift */; };
 		1BB77DE2264F0881009C730A /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB77DE0264F0881009C730A /* colors.swift */; };
 		1BFD29BD2666C44E00A7078E /* FolderSettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD29BC2666C44E00A7078E /* FolderSettingsSheet.swift */; };
@@ -46,6 +60,23 @@
 		29DA2B0D1C34C89B43E40DAB /* Pods_cartographer__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CAD72F7334F8E78823C56D /* Pods_cartographer__iOS_.framework */; };
 		38AF95C22BC8D042355F0349 /* Pods_cartographer__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CF15E6CAAFF9796AA46F54 /* Pods_cartographer__macOS_.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1BA83AB426781B3C00C9516A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B264494262B14EF0031AB46 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BA83AA726781B3A00C9516A;
+			remoteInfo = widgetExtension;
+		};
+		1BA83ACB26781B4B00C9516A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B264494262B14EF0031AB46 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BA83ABD26781B4A00C9516A;
+			remoteInfo = widgetExtension;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		1B8F3B242646D19E008C18AB /* Embed Watch Content */ = {
@@ -64,6 +95,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				1BA83AB626781B3C00C9516A /* widgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +106,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				1BA83ACD26781B4B00C9516A /* widgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +134,13 @@
 		1B53E9B1262DA2C100A55332 /* SignInSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSheet.swift; sourceTree = "<group>"; };
 		1B5B899626306F2F0019B523 /* FolderContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderContentView.swift; sourceTree = "<group>"; };
 		1B8DBF79262C5EB50051F8EC /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
+		1BA83AA826781B3A00C9516A /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BA83AAC26781B3A00C9516A /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
+		1BA83AAE26781B3A00C9516A /* widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = widget.intentdefinition; sourceTree = "<group>"; };
+		1BA83AAF26781B3C00C9516A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1BA83AB126781B3C00C9516A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BA83ABE26781B4A00C9516A /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BA83AC826781B4B00C9516A /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget.entitlements; sourceTree = "<group>"; };
 		1BB77DE0264F0881009C730A /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		1BC1A5752655966100F617F0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1BC1A5772655966100F617F0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -131,6 +171,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1BA83AA526781B3A00C9516A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BA83AAA26781B3A00C9516A /* SwiftUI.framework in Frameworks */,
+				1BA83AA926781B3A00C9516A /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BA83ABB26781B4A00C9516A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BA83AC026781B4A00C9516A /* SwiftUI.framework in Frameworks */,
+				1BA83ABF26781B4A00C9516A /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -140,6 +198,7 @@
 				1B264498262B14EF0031AB46 /* Shared */,
 				1B2644A5262B14F10031AB46 /* iOS */,
 				1B2644AC262B14F10031AB46 /* macOS */,
+				1BA83AAB26781B3A00C9516A /* widget */,
 				1B2644A4262B14F10031AB46 /* Products */,
 				221CA92E2DC5F5E5D3D5C10C /* Pods */,
 				804999ED2981334FF8A2BEB0 /* Frameworks */,
@@ -170,6 +229,8 @@
 			children = (
 				1B2644A3262B14F10031AB46 /* Cartographer.app */,
 				1B2644AB262B14F10031AB46 /* Cartographer.app */,
+				1BA83AA826781B3A00C9516A /* widgetExtension.appex */,
+				1BA83ABE26781B4A00C9516A /* widgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,6 +263,18 @@
 				1B8DBF79262C5EB50051F8EC /* FlashcardView.swift */,
 			);
 			path = "List Views";
+			sourceTree = "<group>";
+		};
+		1BA83AAB26781B3A00C9516A /* widget */ = {
+			isa = PBXGroup;
+			children = (
+				1BA83AAC26781B3A00C9516A /* widget.swift */,
+				1BA83AAE26781B3A00C9516A /* widget.intentdefinition */,
+				1BA83AAF26781B3C00C9516A /* Assets.xcassets */,
+				1BA83AB126781B3C00C9516A /* Info.plist */,
+				1BA83AC826781B4B00C9516A /* widget.entitlements */,
+			);
+			path = widget;
 			sourceTree = "<group>";
 		};
 		1BFD29BF2666C46900A7078E /* Folder Views */ = {
@@ -253,6 +326,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1BA83AB526781B3C00C9516A /* PBXTargetDependency */,
 			);
 			name = "Cartographer (iOS)";
 			productName = "cartographer (iOS)";
@@ -273,11 +347,46 @@
 			buildRules = (
 			);
 			dependencies = (
+				1BA83ACC26781B4B00C9516A /* PBXTargetDependency */,
 			);
 			name = "Cartographer (macOS)";
 			productName = "cartographer (macOS)";
 			productReference = 1B2644AB262B14F10031AB46 /* Cartographer.app */;
 			productType = "com.apple.product-type.application";
+		};
+		1BA83AA726781B3A00C9516A /* widgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BA83AB726781B3C00C9516A /* Build configuration list for PBXNativeTarget "widgetExtension" */;
+			buildPhases = (
+				1BA83AA426781B3A00C9516A /* Sources */,
+				1BA83AA526781B3A00C9516A /* Frameworks */,
+				1BA83AA626781B3A00C9516A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = widgetExtension;
+			productName = widgetExtension;
+			productReference = 1BA83AA826781B3A00C9516A /* widgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		1BA83ABD26781B4A00C9516A /* widgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BA83ACE26781B4B00C9516A /* Build configuration list for PBXNativeTarget "widgetExtension" */;
+			buildPhases = (
+				1BA83ABA26781B4A00C9516A /* Sources */,
+				1BA83ABB26781B4A00C9516A /* Frameworks */,
+				1BA83ABC26781B4A00C9516A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = widgetExtension;
+			productName = widgetExtension;
+			productReference = 1BA83ABE26781B4A00C9516A /* widgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -293,6 +402,12 @@
 					};
 					1B2644AA262B14F10031AB46 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					1BA83AA726781B3A00C9516A = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					1BA83ABD26781B4A00C9516A = {
+						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
@@ -311,6 +426,8 @@
 			targets = (
 				1B2644A2262B14F10031AB46 /* Cartographer (iOS) */,
 				1B2644AA262B14F10031AB46 /* Cartographer (macOS) */,
+				1BA83AA726781B3A00C9516A /* widgetExtension */,
+				1BA83ABD26781B4A00C9516A /* widgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -331,6 +448,22 @@
 			files = (
 				1B2644B8262B14F10031AB46 /* Assets.xcassets in Resources */,
 				1B2644D6262B23390031AB46 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BA83AA626781B3A00C9516A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BA83AB026781B3C00C9516A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BA83ABC26781B4A00C9516A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BA83AD626781B7C00C9516A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +557,7 @@
 			files = (
 				1B2644AF262B14F10031AB46 /* cartographer.xcdatamodeld in Sources */,
 				1B5B899726306F2F0019B523 /* FolderContentView.swift in Sources */,
+				1BA83AB326781B3C00C9516A /* widget.intentdefinition in Sources */,
 				1B12F3F2263DF606000499E1 /* RoleView.swift in Sources */,
 				1B2644B5262B14F10031AB46 /* Persistence.swift in Sources */,
 				1B2644B1262B14F10031AB46 /* cartographerApp.swift in Sources */,
@@ -456,6 +590,7 @@
 				1BFD29C52666C4DD00A7078E /* ListSettingsSheet.swift in Sources */,
 				1B53E9B3262DA2C100A55332 /* SignInSheet.swift in Sources */,
 				1B8DBF7B262C5EB50051F8EC /* FlashcardView.swift in Sources */,
+				1BA83AD426781B7900C9516A /* widget.intentdefinition in Sources */,
 				1BFD29BE2666C44E00A7078E /* FolderSettingsSheet.swift in Sources */,
 				1BFD29C22666C4BC00A7078E /* ListQuizView.swift in Sources */,
 				1B2644C5262B17620031AB46 /* ListContentView.swift in Sources */,
@@ -464,7 +599,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1BA83AA426781B3A00C9516A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BA83AB226781B3C00C9516A /* widget.intentdefinition in Sources */,
+				1BA83AAD26781B3A00C9516A /* widget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BA83ABA26781B4A00C9516A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BA83AD526781B7900C9516A /* widget.intentdefinition in Sources */,
+				1BA83AD126781B7300C9516A /* widget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BA83AB526781B3C00C9516A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BA83AA726781B3A00C9516A /* widgetExtension */;
+			targetProxy = 1BA83AB426781B3C00C9516A /* PBXContainerItemProxy */;
+		};
+		1BA83ACC26781B4B00C9516A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BA83ABD26781B4A00C9516A /* widgetExtension */;
+			targetProxy = 1BA83ACB26781B4B00C9516A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1B2644B9262B14F10031AB46 /* Debug */ = {
@@ -582,6 +748,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0DDC2217E22662A2D60E52FB /* Pods-cartographer (iOS).debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -605,6 +772,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4C3A7389E31386DE750AD238 /* Pods-cartographer (iOS).release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -629,6 +797,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DDA3208CA767C78A2E93B69B /* Pods-cartographer (macOS).debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
@@ -656,6 +825,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F8F0F73A98BEBD3FEA2BC1AC /* Pods-cartographer (macOS).release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
@@ -675,6 +845,103 @@
 				PRODUCT_NAME = Cartographer;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1BA83AB826781B3C00C9516A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68NKG8SS32;
+				INFOPLIST_FILE = widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.tonyzhang.cartographer.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1BA83AB926781B3C00C9516A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68NKG8SS32;
+				INFOPLIST_FILE = widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.tonyzhang.cartographer.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1BA83ACF26781B4B00C9516A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68NKG8SS32;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = net.tonyzhang.cartographer.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1BA83AD026781B4B00C9516A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68NKG8SS32;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = net.tonyzhang.cartographer.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -705,6 +972,24 @@
 			buildConfigurations = (
 				1B2644BF262B14F10031AB46 /* Debug */,
 				1B2644C0262B14F10031AB46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BA83AB726781B3C00C9516A /* Build configuration list for PBXNativeTarget "widgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BA83AB826781B3C00C9516A /* Debug */,
+				1BA83AB926781B3C00C9516A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BA83ACE26781B4B00C9516A /* Build configuration list for PBXNativeTarget "widgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BA83ACF26781B4B00C9516A /* Debug */,
+				1BA83AD026781B4B00C9516A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

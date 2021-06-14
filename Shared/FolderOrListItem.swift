@@ -38,7 +38,8 @@ struct FolderOrListItem: View {
         )
         .shadow(color: hovering ? (colorScheme == .light ? Color.black.opacity(0.04) : Color.black.opacity(0.6)) : Color.black.opacity(0), radius: 10, x: 0, y: 5)
         .padding(8)
-        .animation(Animation.easeInOut(duration: 0.15))
+        .scaleEffect(hovering ? 1.03 : 1)
+        .animation(Animation.easeInOut(duration: 0.1))
         .onHover(perform: { _ in
             hovering.toggle()
         })

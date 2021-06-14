@@ -25,73 +25,8 @@ struct CardView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    
-    #if os(macOS)
-    var isMac = true
-    #else
-    var isMac = false
-    #endif
-    
     var body: some View {
         VStack(alignment:.leading){
-            if(showingSheet && isMac){
-                TextField("",text:$word,onEditingChanged:{_ in word = word.trimmingCharacters(in: .newlines); wordChanged = true})
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .font(.title3.weight(.bold))
-                    .foregroundColor(.primary)
-
-                TextEditor(text:$definition)
-                    .padding(.horizontal,-5)
-                    .onChange(of: definition, perform: { value in
-                        definition = definition.trimmingCharacters(in: .newlines)
-                        definitionChanged = true
-                    })
-                    .font(.body)
-                    
-                HStack{
-                    Button(action:{
-                        showingSheet = false
-                        word = word.trimmingCharacters(in: .whitespacesAndNewlines)
-                        definition = definition.trimmingCharacters(in: .whitespacesAndNewlines)
-                        if(wordChanged){onWordChange(word)}
-                        if(definitionChanged){onDefinitionChange(definition)}
-                    },label:{
-                        Image(systemName:"checkmark")
-                    })
-                    .frame(maxWidth:.infinity,maxHeight:.infinity)
-                    .buttonStyle(PlainButtonStyle())
-                    .background(Color.green)
-                    .foregroundColor(customColors.backgroundSecondary)
-                    .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
-                    .onTapGesture {
-                        showingSheet = false
-                        word = word.trimmingCharacters(in: .whitespacesAndNewlines)
-                        definition = definition.trimmingCharacters(in: .whitespacesAndNewlines)
-                        if(wordChanged){onWordChange(word)}
-                        if(definitionChanged){onDefinitionChange(definition)}
-                    }
-                    
-                    Button(action:{
-                        showingSheet = false
-                        isDeleted = true
-                    },label:{
-                        Image(systemName:"trash")
-                    })
-                    .frame(maxWidth:.infinity,maxHeight:.infinity)
-                    .buttonStyle(PlainButtonStyle())
-                    .background(Color.red)
-                    .foregroundColor(customColors.backgroundSecondary)
-                    .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
-                    .onTapGesture {
-                        showingSheet = false
-                        isDeleted = true
-                        onDelete()
-                    }
-                }
-                .frame(height:20)
-                .padding(.bottom)
-                .padding(.top,4)
-            }else{
             Text(word)
                 .font(.title3)
                 .fontWeight(.bold)
@@ -100,17 +35,9 @@ struct CardView: View {
                 .padding(.bottom, 1)
             Text(definition)
             Spacer()
-            }
-            
-            #if os(iOS)
-            EmptyView()
-            .sheet(isPresented: $showingSheet, content: {
-                CardEditSheet(showingSheet:$showingSheet, word:$word, definition:$definition,onDelete:onDelete,onWordChange:onWordChange,onDefinitionChange:onDefinitionChange)
-            })
-            #endif
         }
         .padding(.top).padding(.leading).padding(.trailing)
-        .frame(maxWidth: .infinity, idealHeight:showingSheet && isMac ? nil : 150,maxHeight:.infinity, alignment:.leading)
+        .frame(maxWidth: .infinity, idealHeight:150,maxHeight:.infinity, alignment:.leading)
         .animation(Animation.easeInOut(duration:0.2))
         .background(customColors.backgroundSecondary)
         .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
@@ -118,6 +45,8 @@ struct CardView: View {
                     .stroke(Color.gray.opacity(0.2), lineWidth: 1)
         )
         .shadow(color: hovering ? (colorScheme == .light ? Color.black.opacity(0.04) : Color.black.opacity(0.6)) : Color.black.opacity(0), radius: 10, x: 0, y: 5)
+        .scaleEffect(hovering ? 1.03 : 1)
+        .animation(Animation.easeInOut(duration: 0.1))
         .onHover(perform: { hover in
             hovering = hover
         })
@@ -127,6 +56,9 @@ struct CardView: View {
                 showingSheet = true
             }
         }
+        .sheet(isPresented: $showingSheet, content: {
+            CardEditSheet(showingSheet:$showingSheet, word:$word, definition:$definition,onDelete:onDelete,onWordChange:onWordChange,onDefinitionChange:onDefinitionChange)
+        })
         
     }
 }
