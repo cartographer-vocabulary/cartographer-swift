@@ -7,12 +7,12 @@
 		<key>Cartographer (iOS).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>35</integer>
+			<integer>54</integer>
 		</dict>
 		<key>Cartographer (macOS).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>34</integer>
+			<integer>1</integer>
 		</dict>
 		<key>cartographer (iOS).xcscheme_^#shared#^_</key>
 		<dict>
@@ -42,7 +42,20 @@
 		<key>widgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>36</integer>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>1B2644AA262B14F10031AB46</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1BA83ABD26781B4A00C9516A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

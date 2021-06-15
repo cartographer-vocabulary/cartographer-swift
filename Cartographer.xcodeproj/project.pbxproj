@@ -44,7 +44,7 @@
 		1BA83AB626781B3C00C9516A /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1BA83AA826781B3A00C9516A /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1BA83ABF26781B4A00C9516A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC1A5752655966100F617F0 /* WidgetKit.framework */; };
 		1BA83AC026781B4A00C9516A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC1A5772655966100F617F0 /* SwiftUI.framework */; };
-		1BA83ACD26781B4B00C9516A /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1BA83ABE26781B4A00C9516A /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1BA83ACD26781B4B00C9516A /* widgetExtensionMac.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1BA83ABE26781B4A00C9516A /* widgetExtensionMac.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1BA83AD126781B7300C9516A /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA83AAC26781B3A00C9516A /* widget.swift */; };
 		1BA83AD426781B7900C9516A /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1BA83AAE26781B3A00C9516A /* widget.intentdefinition */; };
 		1BA83AD526781B7900C9516A /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1BA83AAE26781B3A00C9516A /* widget.intentdefinition */; };
@@ -57,19 +57,21 @@
 		1BFD29C22666C4BC00A7078E /* ListQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD29C02666C4BC00A7078E /* ListQuizView.swift */; };
 		1BFD29C42666C4DD00A7078E /* ListSettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD29C32666C4DD00A7078E /* ListSettingsSheet.swift */; };
 		1BFD29C52666C4DD00A7078E /* ListSettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD29C32666C4DD00A7078E /* ListSettingsSheet.swift */; };
-		29DA2B0D1C34C89B43E40DAB /* Pods_cartographer__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CAD72F7334F8E78823C56D /* Pods_cartographer__iOS_.framework */; };
-		38AF95C22BC8D042355F0349 /* Pods_cartographer__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CF15E6CAAFF9796AA46F54 /* Pods_cartographer__macOS_.framework */; };
+		570408F05D6270EFB8ABA109 /* Pods_widgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0203B751C5D672C7C187584B /* Pods_widgetExtension.framework */; };
+		9B115B001EF126C1693485C9 /* Pods_Cartographer__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D494C3783ABD2ECF446136A /* Pods_Cartographer__macOS_.framework */; };
+		C9E8A6979EED50049CC12409 /* Pods_Cartographer__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694EEF0098A7700B626FEDB6 /* Pods_Cartographer__iOS_.framework */; };
+		F6C6B508DA5C130D96E3FC98 /* Pods_widgetExtensionMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822917D78ED68A09AC90BE74 /* Pods_widgetExtensionMac.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1BA83AB426781B3C00C9516A /* PBXContainerItemProxy */ = {
+		1B1ECEA826793768002C3D7B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1B264494262B14EF0031AB46 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1BA83AA726781B3A00C9516A;
 			remoteInfo = widgetExtension;
 		};
-		1BA83ACB26781B4B00C9516A /* PBXContainerItemProxy */ = {
+		1B1ECEAA2679376F002C3D7B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1B264494262B14EF0031AB46 /* Project object */;
 			proxyType = 1;
@@ -106,7 +108,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				1BA83ACD26781B4B00C9516A /* widgetExtension.appex in Embed App Extensions */,
+				1BA83ACD26781B4B00C9516A /* widgetExtensionMac.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +116,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0203B751C5D672C7C187584B /* Pods_widgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_widgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DDC2217E22662A2D60E52FB /* Pods-cartographer (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartographer (iOS).debug.xcconfig"; path = "Target Support Files/Pods-cartographer (iOS)/Pods-cartographer (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 		1B12F3F1263DF606000499E1 /* RoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleView.swift; sourceTree = "<group>"; };
 		1B26449A262B14EF0031AB46 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
@@ -139,7 +142,7 @@
 		1BA83AAE26781B3A00C9516A /* widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = widget.intentdefinition; sourceTree = "<group>"; };
 		1BA83AAF26781B3C00C9516A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BA83AB126781B3C00C9516A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1BA83ABE26781B4A00C9516A /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BA83ABE26781B4A00C9516A /* widgetExtensionMac.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtensionMac.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA83AC826781B4B00C9516A /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget.entitlements; sourceTree = "<group>"; };
 		1BB77DE0264F0881009C730A /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		1BC1A5752655966100F617F0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -147,9 +150,18 @@
 		1BFD29BC2666C44E00A7078E /* FolderSettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSettingsSheet.swift; sourceTree = "<group>"; };
 		1BFD29C02666C4BC00A7078E /* ListQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListQuizView.swift; sourceTree = "<group>"; };
 		1BFD29C32666C4DD00A7078E /* ListSettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettingsSheet.swift; sourceTree = "<group>"; };
-		23CAD72F7334F8E78823C56D /* Pods_cartographer__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cartographer__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F95B4F0122713EE019C2DA0 /* Pods-widgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-widgetExtension.release.xcconfig"; path = "Target Support Files/Pods-widgetExtension/Pods-widgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		2C06CF3C1CFA99C2016EF778 /* Pods-Cartographer (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cartographer (iOS).debug.xcconfig"; path = "Target Support Files/Pods-Cartographer (iOS)/Pods-Cartographer (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		2E1FFE6AA0DBCA10F5DF3752 /* Pods-Cartographer (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cartographer (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Cartographer (macOS)/Pods-Cartographer (macOS).debug.xcconfig"; sourceTree = "<group>"; };
+		3D323B992754FEEE05AFC07F /* Pods-Cartographer (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cartographer (macOS).release.xcconfig"; path = "Target Support Files/Pods-Cartographer (macOS)/Pods-Cartographer (macOS).release.xcconfig"; sourceTree = "<group>"; };
 		4C3A7389E31386DE750AD238 /* Pods-cartographer (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartographer (iOS).release.xcconfig"; path = "Target Support Files/Pods-cartographer (iOS)/Pods-cartographer (iOS).release.xcconfig"; sourceTree = "<group>"; };
-		57CF15E6CAAFF9796AA46F54 /* Pods_cartographer__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cartographer__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D494C3783ABD2ECF446136A /* Pods_Cartographer__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartographer__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		694EEF0098A7700B626FEDB6 /* Pods_Cartographer__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartographer__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		822917D78ED68A09AC90BE74 /* Pods_widgetExtensionMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_widgetExtensionMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9391E566793A86E85860AF5B /* Pods-widgetExtensionMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-widgetExtensionMac.release.xcconfig"; path = "Target Support Files/Pods-widgetExtensionMac/Pods-widgetExtensionMac.release.xcconfig"; sourceTree = "<group>"; };
+		B8ADE2AC2F6C6B498F2A773A /* Pods-widgetExtensionMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-widgetExtensionMac.debug.xcconfig"; path = "Target Support Files/Pods-widgetExtensionMac/Pods-widgetExtensionMac.debug.xcconfig"; sourceTree = "<group>"; };
+		BDC392F665C8017F3FCC6B65 /* Pods-Cartographer (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cartographer (iOS).release.xcconfig"; path = "Target Support Files/Pods-Cartographer (iOS)/Pods-Cartographer (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		DD26A3B40EC0E55DDD9E2FE1 /* Pods-widgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-widgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-widgetExtension/Pods-widgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		DDA3208CA767C78A2E93B69B /* Pods-cartographer (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartographer (macOS).debug.xcconfig"; path = "Target Support Files/Pods-cartographer (macOS)/Pods-cartographer (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		F8F0F73A98BEBD3FEA2BC1AC /* Pods-cartographer (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartographer (macOS).release.xcconfig"; path = "Target Support Files/Pods-cartographer (macOS)/Pods-cartographer (macOS).release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,7 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29DA2B0D1C34C89B43E40DAB /* Pods_cartographer__iOS_.framework in Frameworks */,
+				C9E8A6979EED50049CC12409 /* Pods_Cartographer__iOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38AF95C22BC8D042355F0349 /* Pods_cartographer__macOS_.framework in Frameworks */,
+				9B115B001EF126C1693485C9 /* Pods_Cartographer__macOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +189,7 @@
 			files = (
 				1BA83AAA26781B3A00C9516A /* SwiftUI.framework in Frameworks */,
 				1BA83AA926781B3A00C9516A /* WidgetKit.framework in Frameworks */,
+				570408F05D6270EFB8ABA109 /* Pods_widgetExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +199,7 @@
 			files = (
 				1BA83AC026781B4A00C9516A /* SwiftUI.framework in Frameworks */,
 				1BA83ABF26781B4A00C9516A /* WidgetKit.framework in Frameworks */,
+				F6C6B508DA5C130D96E3FC98 /* Pods_widgetExtensionMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +244,7 @@
 				1B2644A3262B14F10031AB46 /* Cartographer.app */,
 				1B2644AB262B14F10031AB46 /* Cartographer.app */,
 				1BA83AA826781B3A00C9516A /* widgetExtension.appex */,
-				1BA83ABE26781B4A00C9516A /* widgetExtension.appex */,
+				1BA83ABE26781B4A00C9516A /* widgetExtensionMac.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -293,6 +307,14 @@
 				4C3A7389E31386DE750AD238 /* Pods-cartographer (iOS).release.xcconfig */,
 				DDA3208CA767C78A2E93B69B /* Pods-cartographer (macOS).debug.xcconfig */,
 				F8F0F73A98BEBD3FEA2BC1AC /* Pods-cartographer (macOS).release.xcconfig */,
+				2C06CF3C1CFA99C2016EF778 /* Pods-Cartographer (iOS).debug.xcconfig */,
+				BDC392F665C8017F3FCC6B65 /* Pods-Cartographer (iOS).release.xcconfig */,
+				2E1FFE6AA0DBCA10F5DF3752 /* Pods-Cartographer (macOS).debug.xcconfig */,
+				3D323B992754FEEE05AFC07F /* Pods-Cartographer (macOS).release.xcconfig */,
+				DD26A3B40EC0E55DDD9E2FE1 /* Pods-widgetExtension.debug.xcconfig */,
+				1F95B4F0122713EE019C2DA0 /* Pods-widgetExtension.release.xcconfig */,
+				B8ADE2AC2F6C6B498F2A773A /* Pods-widgetExtensionMac.debug.xcconfig */,
+				9391E566793A86E85860AF5B /* Pods-widgetExtensionMac.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -300,10 +322,12 @@
 		804999ED2981334FF8A2BEB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				23CAD72F7334F8E78823C56D /* Pods_cartographer__iOS_.framework */,
-				57CF15E6CAAFF9796AA46F54 /* Pods_cartographer__macOS_.framework */,
 				1BC1A5752655966100F617F0 /* WidgetKit.framework */,
 				1BC1A5772655966100F617F0 /* SwiftUI.framework */,
+				694EEF0098A7700B626FEDB6 /* Pods_Cartographer__iOS_.framework */,
+				5D494C3783ABD2ECF446136A /* Pods_Cartographer__macOS_.framework */,
+				0203B751C5D672C7C187584B /* Pods_widgetExtension.framework */,
+				822917D78ED68A09AC90BE74 /* Pods_widgetExtensionMac.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -326,7 +350,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				1BA83AB526781B3C00C9516A /* PBXTargetDependency */,
+				1B1ECEA926793768002C3D7B /* PBXTargetDependency */,
 			);
 			name = "Cartographer (iOS)";
 			productName = "cartographer (iOS)";
@@ -347,7 +371,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				1BA83ACC26781B4B00C9516A /* PBXTargetDependency */,
+				1B1ECEAB2679376F002C3D7B /* PBXTargetDependency */,
 			);
 			name = "Cartographer (macOS)";
 			productName = "cartographer (macOS)";
@@ -358,6 +382,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BA83AB726781B3C00C9516A /* Build configuration list for PBXNativeTarget "widgetExtension" */;
 			buildPhases = (
+				371853BCCC6DB42676E5611D /* [CP] Check Pods Manifest.lock */,
 				1BA83AA426781B3A00C9516A /* Sources */,
 				1BA83AA526781B3A00C9516A /* Frameworks */,
 				1BA83AA626781B3A00C9516A /* Resources */,
@@ -371,10 +396,11 @@
 			productReference = 1BA83AA826781B3A00C9516A /* widgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		1BA83ABD26781B4A00C9516A /* widgetExtension */ = {
+		1BA83ABD26781B4A00C9516A /* widgetExtensionMac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1BA83ACE26781B4B00C9516A /* Build configuration list for PBXNativeTarget "widgetExtension" */;
+			buildConfigurationList = 1BA83ACE26781B4B00C9516A /* Build configuration list for PBXNativeTarget "widgetExtensionMac" */;
 			buildPhases = (
+				F45ACC1D23ABA4C1982365C2 /* [CP] Check Pods Manifest.lock */,
 				1BA83ABA26781B4A00C9516A /* Sources */,
 				1BA83ABB26781B4A00C9516A /* Frameworks */,
 				1BA83ABC26781B4A00C9516A /* Resources */,
@@ -383,9 +409,9 @@
 			);
 			dependencies = (
 			);
-			name = widgetExtension;
+			name = widgetExtensionMac;
 			productName = widgetExtension;
-			productReference = 1BA83ABE26781B4A00C9516A /* widgetExtension.appex */;
+			productReference = 1BA83ABE26781B4A00C9516A /* widgetExtensionMac.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -427,7 +453,7 @@
 				1B2644A2262B14F10031AB46 /* Cartographer (iOS) */,
 				1B2644AA262B14F10031AB46 /* Cartographer (macOS) */,
 				1BA83AA726781B3A00C9516A /* widgetExtension */,
-				1BA83ABD26781B4A00C9516A /* widgetExtension */,
+				1BA83ABD26781B4A00C9516A /* widgetExtensionMac */,
 			);
 		};
 /* End PBXProject section */
@@ -476,15 +502,37 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cartographer (iOS)/Pods-cartographer (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Cartographer (iOS)/Pods-Cartographer (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cartographer (iOS)/Pods-cartographer (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Cartographer (iOS)/Pods-Cartographer (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cartographer (iOS)/Pods-cartographer (iOS)-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cartographer (iOS)/Pods-Cartographer (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		371853BCCC6DB42676E5611D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-widgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8B27EAED15361174188BFC0A /* [CP] Check Pods Manifest.lock */ = {
@@ -502,7 +550,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-cartographer (iOS)-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Cartographer (iOS)-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -515,15 +563,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cartographer (macOS)/Pods-cartographer (macOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Cartographer (macOS)/Pods-Cartographer (macOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cartographer (macOS)/Pods-cartographer (macOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Cartographer (macOS)/Pods-Cartographer (macOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cartographer (macOS)/Pods-cartographer (macOS)-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cartographer (macOS)/Pods-Cartographer (macOS)-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DD6628D518B7757BAD525362 /* [CP] Check Pods Manifest.lock */ = {
@@ -541,7 +589,29 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-cartographer (macOS)-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Cartographer (macOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F45ACC1D23ABA4C1982365C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-widgetExtensionMac-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -620,15 +690,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1BA83AB526781B3C00C9516A /* PBXTargetDependency */ = {
+		1B1ECEA926793768002C3D7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1BA83AA726781B3A00C9516A /* widgetExtension */;
-			targetProxy = 1BA83AB426781B3C00C9516A /* PBXContainerItemProxy */;
+			targetProxy = 1B1ECEA826793768002C3D7B /* PBXContainerItemProxy */;
 		};
-		1BA83ACC26781B4B00C9516A /* PBXTargetDependency */ = {
+		1B1ECEAB2679376F002C3D7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1BA83ABD26781B4A00C9516A /* widgetExtension */;
-			targetProxy = 1BA83ACB26781B4B00C9516A /* PBXContainerItemProxy */;
+			target = 1BA83ABD26781B4A00C9516A /* widgetExtensionMac */;
+			targetProxy = 1B1ECEAA2679376F002C3D7B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -746,7 +816,7 @@
 		};
 		1B2644BC262B14F10031AB46 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0DDC2217E22662A2D60E52FB /* Pods-cartographer (iOS).debug.xcconfig */;
+			baseConfigurationReference = 2C06CF3C1CFA99C2016EF778 /* Pods-Cartographer (iOS).debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -770,7 +840,7 @@
 		};
 		1B2644BD262B14F10031AB46 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C3A7389E31386DE750AD238 /* Pods-cartographer (iOS).release.xcconfig */;
+			baseConfigurationReference = BDC392F665C8017F3FCC6B65 /* Pods-Cartographer (iOS).release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -795,7 +865,7 @@
 		};
 		1B2644BF262B14F10031AB46 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDA3208CA767C78A2E93B69B /* Pods-cartographer (macOS).debug.xcconfig */;
+			baseConfigurationReference = 2E1FFE6AA0DBCA10F5DF3752 /* Pods-Cartographer (macOS).debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -823,7 +893,7 @@
 		};
 		1B2644C0262B14F10031AB46 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8F0F73A98BEBD3FEA2BC1AC /* Pods-cartographer (macOS).release.xcconfig */;
+			baseConfigurationReference = 3D323B992754FEEE05AFC07F /* Pods-Cartographer (macOS).release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -851,6 +921,7 @@
 		};
 		1BA83AB826781B3C00C9516A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD26A3B40EC0E55DDD9E2FE1 /* Pods-widgetExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -874,6 +945,7 @@
 		};
 		1BA83AB926781B3C00C9516A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F95B4F0122713EE019C2DA0 /* Pods-widgetExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -898,6 +970,7 @@
 		};
 		1BA83ACF26781B4B00C9516A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8ADE2AC2F6C6B498F2A773A /* Pods-widgetExtensionMac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -912,7 +985,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tonyzhang.cartographer.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -923,6 +996,7 @@
 		};
 		1BA83AD026781B4B00C9516A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9391E566793A86E85860AF5B /* Pods-widgetExtensionMac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -937,7 +1011,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tonyzhang.cartographer.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -985,7 +1059,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1BA83ACE26781B4B00C9516A /* Build configuration list for PBXNativeTarget "widgetExtension" */ = {
+		1BA83ACE26781B4B00C9516A /* Build configuration list for PBXNativeTarget "widgetExtensionMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1BA83ACF26781B4B00C9516A /* Debug */,

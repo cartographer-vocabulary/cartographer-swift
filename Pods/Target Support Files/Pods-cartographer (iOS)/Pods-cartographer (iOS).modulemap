@@ -1,5 +1,5 @@
-framework module Pods_cartographer__iOS_ {
-  umbrella header "Pods-cartographer (iOS)-umbrella.h"
+framework module Pods_Cartographer__iOS_ {
+  umbrella header "Pods-Cartographer (iOS)-umbrella.h"
 
   export *
   module * { export * }

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_cartographer__macOS_VersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_cartographer__macOS_VersionString[];
+FOUNDATION_EXPORT double Pods_Cartographer__macOS_VersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Cartographer__macOS_VersionString[];
 
