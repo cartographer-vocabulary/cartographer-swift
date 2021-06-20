@@ -33,6 +33,7 @@ struct cartographerApp: App {
         if(!isAlreadyLaunchedOnce){
             isAlreadyLaunchedOnce = true
             FirebaseApp.configure()
+            NotificationCenter.default.post(name:Notification.Name("firebaseConfigured"),object: nil)
             FirebaseAuth.Auth.auth().addStateDidChangeListener{ (auth, user) in
                 if let user = user {
                     self.userInfo.uid = user.uid
@@ -99,7 +100,6 @@ struct cartographerApp: App {
                         }
                     }
                 })
-                .onAppear(perform:appLoad)
         }
     }
 }

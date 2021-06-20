@@ -15,6 +15,8 @@ struct FavoritesContentView: View {
     @EnvironmentObject var userInfo:UserInfo
     let userDocChanged = NotificationCenter.default
         .publisher(for: Notification.Name("userDocChanged"))
+    let signInPublisher = NotificationCenter.default
+        .publisher(for: Notification.Name("userLoggedIn"))
     
 
     struct FavoritesListDoc {
@@ -203,7 +205,14 @@ struct FavoritesContentView: View {
         .frame(maxWidth:.infinity, maxHeight: .infinity)
         .background(customColors.backgroundPrimary)
         .navigationTitle("Favorites")
-        .onAppear(perform: updateFavorites)
+        .onReceive(signInPublisher, perform: { _ in
+            updateFavorites()
+        })
+        .onAppear(perform: {
+            if(userInfo.signedIn){
+                updateFavorites()
+            }
+        })
         .onReceive(userDocChanged, perform:{ _ in
             updateFavorites()
         })
