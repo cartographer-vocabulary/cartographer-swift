@@ -42,8 +42,10 @@ struct cartographerApp: App {
                     self.userInfo.signedIn = true
                     
                     NotificationCenter.default.post(name:Notification.Name("userLoggedIn"),object: nil)
-             
+                    
                     //get the user document
+                    
+                    userListener?.remove()
                     userListener = Firestore.firestore().collection("users").document(user.uid).addSnapshotListener{ documentSnapshot, error in
                         guard let document = documentSnapshot else {
                             print("Error fetching document: \(error!)")
@@ -100,6 +102,7 @@ struct cartographerApp: App {
                         }
                     }
                 })
+                .onAppear(perform: appLoad)
         }
     }
 }

@@ -158,7 +158,7 @@ struct FolderContentView: View {
                         Label("Star",systemImage: userInfo.favoriteFolders?.contains(folderId) ?? false ? "star.fill" : "star")
                             .foregroundColor(userInfo.favoriteFolders?.contains(folderId) ?? false ? Color.accentColor : Color.primary)
                     })
-                    Button(action: {showingSettingsSheet = true},label:{
+                    Button(action: {showingSettingsSheet = true;print("open preferences")},label:{
                         Label("Folder Settings",systemImage:"ellipsis")
                     })
                 }
